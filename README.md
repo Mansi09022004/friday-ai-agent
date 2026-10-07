@@ -1,13 +1,24 @@
 # Friday — Real-Time Voice AI Agent
 
-A real-time voice assistant that listens, talks back, remembers you across sessions, uses external tools, and can send WhatsApp messages by voice.
+A real-time voice assistant that listens, talks back, remembers you across sessions, and takes real actions: searching the web, checking the weather, playing Spotify, sending emails and WhatsApp messages.
 
-## What it does
+## What you can ask Friday
+
+| Ask Friday to... | Example |
+|---|---|
+| Search the web | "Search the latest news on AI agents" |
+| Check the weather | "What's the weather in Pune today?" |
+| Play music on Spotify | "Play my focus playlist" |
+| Send an email | "Email Rahul that the meeting is at 5" |
+| Send a WhatsApp message | "Send a WhatsApp to Mansi saying I'll be late" |
+| Remember things | "Remember that my exam is on Friday" |
+
+## Features
 
 - **Real-time voice conversation** using LiveKit Agents with Gemini Realtime
 - **Long-term memory** with mem0, so it recalls earlier conversations
 - **Tool use** through function calling and **MCP** (connected to n8n workflows)
-- **WhatsApp messaging by voice** through Meta's WhatsApp Business Cloud API: say "send a WhatsApp to Mansi saying I'll be late", and the agent resolves the contact name, normalizes the number to E.164, calls the Graph API and confirms by voice
+- **WhatsApp messaging by voice** through Meta's WhatsApp Business Cloud API: the agent resolves the contact name, normalizes the number to E.164, calls the Graph API and confirms by voice
 - **Dockerized** for easy setup
 
 ## WhatsApp integration notes
@@ -26,7 +37,7 @@ Python · LiveKit Agents · Gemini Realtime · mem0 · MCP · n8n · LangChain �
 |---|---|
 | `agent.py` | Main voice agent entry point |
 | `prompts.py` | Agent instructions and prompts |
-| `tools.py` | Tools the agent can call (including WhatsApp) |
+| `tools.py` | Tools the agent can call (web search, weather, WhatsApp, etc.) |
 | `mcp_client/` | MCP client for external tools |
 | `Dockerfile` | Container setup |
 
